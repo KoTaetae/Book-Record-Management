@@ -1,0 +1,26 @@
+{
+  "name": "bookrecord-management",
+  "version": "1.0.0",
+  "description": "Book record management server build with node.js and express",
+  "main": "index.js",
+  "scripts": {
+     "start": "node index.js",
+     "dev":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoTaetae/BookRecord-Management.git"
+  },
+  "author": "\"Komal Gupta\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KoTaetae/BookRecord-Management/issues"
+  },
+  "homepage": "https://github.com/KoTaetae/BookRecord-Management#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
