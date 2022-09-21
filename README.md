@@ -20,7 +20,7 @@ GET: get all books ✅ POST: post a new book ✅
 /books/{id}
 GET: get a book by its id ✅ PUT: update a particular book with its id ✅
 
-/books/issued/
+/books/issued/books
 GET: get a list of all issued books ✅
 
 /books/issued/withFine
