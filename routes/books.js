@@ -1,3 +1,4 @@
+const e = require("express");
 const express = require("express");
 const {books} = require("../data/books.json")
 const {users} = require("../data/users.json")
@@ -78,6 +79,48 @@ if(issuedBooks.length === 0)
         data: issuedBooks,
     });
 });
+
+
+/*
+Route : /books/issued/by-user
+Method: POST
+Description : Create new book
+Access: Public
+Parameters(Additional Data): none
+Data: author, name, genre, price, publisher,id
+*/
+
+router.post("/",(req,res) => {
+    const {data} = req.body;
+
+    if(!data) {
+        return res.status(400).json({
+            success:false,
+            message:"No data is provided!",
+        });
+    }
+
+    
+    const book = books.find((each) => each.id === data.id);
+
+        
+    if(book){
+        return res.status(404).json({
+            success: false,
+            message:"Book already exists with this id, please use unique id!",
+        });
+    }
+
+    const allBooks =[...books, data];
+
+
+    return res.status(201).json({
+        success:true,
+        data: allBooks,
+    });
+});
+
+
 
 //default export
 module.exports = router;
